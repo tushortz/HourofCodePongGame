@@ -1,4 +1,4 @@
-# Pong HTML5/JavaScript Game - Getting Started Tutorial
+# Hour of Code Ping Pong HTML5/JavaScript Game 
 
 
 
