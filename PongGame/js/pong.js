@@ -69,6 +69,7 @@ var Ball = function () {
             position[1] <= playerPosition[1] + player.getSize()) {
             console.log("Grabbed by player!");
             owner = player;
+            player.fire();
             // ADD player.fire(); ***************************************************************************************
         }
 
@@ -203,16 +204,16 @@ function AI(playerToControl) {
 
     function aimAndFire() {
         // We'll repeat the motion action 5 to 10 times
-        var numRepeats = Math.floor(5 + Math.random() * 5);
+        // var numRepeats = Math.floor(5 + Math.random() * 5);
         // COMMENT OUT ABOVE ***************************************************************************************
 
-        function randomMove() {
-            if (Math.random() > .5) {
-                ctl.move(-distance);
-            } else {
-                ctl.move(distance);
-            }
-        }
+        // function randomMove() {
+        //     if (Math.random() > .5) {
+        //         ctl.move(-distance);
+        //     } else {
+        //         ctl.move(distance);
+        //     }
+        // }
         // COMMENT OUT ABOVE ***************************************************************************************
 
         function randomAimAndFire() {
@@ -224,7 +225,8 @@ function AI(playerToControl) {
             currentState = State.FOLLOWING;
         }
 
-        repeat(randomMove, randomAimAndFire, 250, numRepeats);
+        // repeat(randomMove, randomAimAndFire, 250, numRepeats);
+        repeat(0, randomAimAndFire, 0, 0);
         // SET randomMove 0, internal 0, numRepeats 0 ***************************************************************
     }
 
@@ -236,7 +238,7 @@ function AI(playerToControl) {
         }
         setTimeout(function () {
             currentState = State.FOLLOWING;
-        }, 400);
+        }, 100);
         // Change from 400 to 100 ***************************************************************************************
     }
     //Update AI function so it acts according to its state
